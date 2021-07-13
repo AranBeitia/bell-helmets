@@ -7,3 +7,7 @@
 	padding: 2rem;
 	background-color: #b1acff;
 }
+
+.main-content {
+	outline-color: 1px solid red;
+}
