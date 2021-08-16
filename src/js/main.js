@@ -1,4 +1,4 @@
-import { product, carrito, addressForm, shippingForm, endForm } from './templatesHtml.js'
+import { product, carrito, addressForm, shippingForm, endForm } from './modules/templatesHtml.js'
 const mainWrapper = document.querySelector('#main-content')
 
 function buildLayout(html) {

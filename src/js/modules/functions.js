@@ -1,4 +1,4 @@
-import { mainWrapper } from "./variables";
+import { mainWrapper } from "../variables";
 
 document.addEventListener('DOMContentLoaded', getEvents)
 

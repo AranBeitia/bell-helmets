@@ -1,4 +1,4 @@
-let product = `
+const product = `
   <article id="producto">
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, autem
@@ -8,10 +8,10 @@ let product = `
   </article>
 `
 
-let carrito = `
+const carrito = `
 <article id="carrito">
   <section id="form-profile">
-    <h1>Step 1 - profile</h1>
+    <h1 class="text-uppercase">Step 1 - profile</h1>
     <form action="" method="POST">
       <label for="name">Your name</label>
       <input type="text" id="name" placeholder="enter your name" />
@@ -29,7 +29,7 @@ let carrito = `
 </article>
 `
 
-let addressForm = `
+const addressForm = `
   <section id="form-address">
     <h1>Step 2 - address</h1>
     <form action="" method="POST">
@@ -44,7 +44,7 @@ let addressForm = `
   </section>
 `
 
-let shippingForm = `
+const shippingForm = `
   <section id="form-shipping">
     <h1>Step 3 - SHIPPING</h1>
     <form action="" method="POST">
@@ -56,7 +56,7 @@ let shippingForm = `
   </section>
 `
 
-let endForm = `
+const endForm = `
   <section id="form-end">END</section>
 `
 export {
