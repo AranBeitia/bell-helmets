@@ -1,8 +1,3 @@
-/** UTILS */
-.is-hidden {
-	display: none;
-}
-
-.is-visible {
-	display: block;
+.cursor-pointer {
+  cursor: pointer;
 }

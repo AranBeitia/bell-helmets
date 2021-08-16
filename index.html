@@ -12,13 +12,55 @@
 	</head>
 
 	<body>
-		<div class="container">
-			<header class="flex">
-				<img src="src/assets/img/logo.png" alt="">
-				<h1>Bell helmets</h1>
-			</header>
-			<main class="main-content" id="main-content">
-			</main>
-		</div>
+		<header>
+			<nav class="navbar navbar-light bg-light">
+				<div class="container">
+					<a class="navbar-brand" href="/">
+						<img class="logo" src="src/assets/img/logo.png" alt="Bell logo">
+						<span>Bell helmets</span>
+					</a>
+				</div>
+			</nav>
+		</header>
+		<main id="carouselExampleControls" class="carousel slide cursor-pointer" data-bs-ride="carousel" data-bs-toggle="modal" data-bs-target="#exampleModal">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="src/assets/img/bell-bg01.jpg" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="src/assets/img/bell-bg02.jpg" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="src/assets/img/bell-bg03.jpg" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="src/assets/img/bell-bg04.jpg" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="src/assets/img/bell-bg05.jpg" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="src/assets/img/bell-bg06.jpg" class="d-block w-100" alt="...">
+				</div>
+			</div>
+		</main>
+
+		<!-- Modal -->
+		<article class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body" id="main-content">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</div>
+			</div>
+		</article>
 	</body>
 </html>
