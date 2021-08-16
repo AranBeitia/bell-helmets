@@ -1,4 +1,5 @@
-import { product, carrito, addressForm, shippingForm, endForm } from './modules/templatesHtml.js'
+import { product, profileForm, addressForm, shippingForm, endForm } from './modules/templatesHtml.js'
+
 const mainWrapper = document.querySelector('#main-content')
 
 function buildLayout(html) {
@@ -18,13 +19,15 @@ function validator (value, template, goTo) {
 
 document.addEventListener('DOMContentLoaded', function () {
 	buildLayout(product)
+	document.getElementById('imageSelected')
+	console.log(imageSelected);
 	let buttonCta = document.querySelector('#buy-cta')
 	buttonCta.addEventListener('click', goToBuy)
 })
 
 function goToBuy(e) {
 	e.preventDefault()
-	buildLayout(carrito)
+	buildLayout(profileForm)
 	document.getElementById('button-next').addEventListener('click', goToAddress)
 }
 
@@ -51,3 +54,5 @@ function goToEnd(e) {
 
 	validator(value, endForm)
 }
+
+

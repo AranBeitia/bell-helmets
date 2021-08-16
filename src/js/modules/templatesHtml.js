@@ -1,15 +1,29 @@
 const product = `
-  <article id="producto">
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, autem
-      veniam repudiandae natus optio repellat?
-    </p>
-    <button id="buy-cta" class="button">BUY</button>
-  </article>
+  <section id="product" class="d-flex">
+    <ul class="list-group">
+      <li class="list-group-item image-list">
+        <img class="img-fluid" src="src/assets/img/bell-motoIII-01.jpg" alt="Bell moto 3" />
+      </li>
+      <li class="list-group-item image-list">
+        <img class="img-fluid" src="src/assets/img/bell-motoIII-02.jpg" alt="Bell moto 3" />
+      </li>
+      <li class="list-group-item image-list">
+        <img class="img-fluid" src="src/assets/img/bell-motoIII-03.jpg" alt="Bell moto 3" />
+      </li>
+      <li class="list-group-item image-list">
+        <img class="img-fluid" src="src/assets/img/bell-motoIII-04.jpg" alt="Bell moto 3" />
+      </li>
+    </ul>
+    <div>
+      <img id="imageSelected" class="img-fluid" src="src/assets/img/bell-motoIII-01.jpg" alt="Bell moto 3" />
+    </div>
+  </section>
+  <div class="modal-footer">
+    <button id="buy-cta" class="btn btn-primary">Buy</button>
+  </div>
 `
 
-const carrito = `
-<article id="carrito">
+const profileForm = `
   <section id="form-profile">
     <h1 class="text-uppercase">Step 1 - profile</h1>
     <form action="" method="POST">
@@ -23,10 +37,11 @@ const carrito = `
         placeholder="enter your last name"
         class="button"
       />
-      <input type="submit" value="validate" id="button-next" class="button" />
     </form>
   </section>
-</article>
+  <div class="modal-footer">
+    <button id="button-next" class="btn btn-primary">Next</button>
+  </div>
 `
 
 const addressForm = `
@@ -38,10 +53,11 @@ const addressForm = `
 
       <label for="cp">Your CP</label>
       <input type="text" id="cp" placeholder="enter your CP" />
-
-      <input type="submit" value="validate" id="button-next" class="button" />
     </form>
   </section>
+  <div class="modal-footer">
+    <button id="button-next" class="btn btn-primary">Validate</button>
+  </div>
 `
 
 const shippingForm = `
@@ -50,10 +66,11 @@ const shippingForm = `
     <form action="" method="POST">
       <label for="shipping">Your address</label>
       <input type="text" id="shipping" placeholder="enter your shipping" />
-
-      <input type="submit" value="validate" id="button-next" class="button" />
     </form>
   </section>
+  <div class="modal-footer">
+    <button id="button-next" class="btn btn-primary">Validate</button>
+  </div>
 `
 
 const endForm = `
@@ -61,7 +78,7 @@ const endForm = `
 `
 export {
   product,
-  carrito,
+  profileForm,
   addressForm,
   shippingForm,
   endForm
