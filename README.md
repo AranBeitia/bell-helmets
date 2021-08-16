@@ -20,7 +20,7 @@ Project of validation form in a process of shopping a product
 
 ## Demo
 
-Insert gif or link to demo
+https://aranbeitia.github.io/bell-helmets/
 
   
 ## Lessons Learned
