@@ -18,9 +18,9 @@ const product = `
       <img id="imageSelected" class="img-fluid" src="src/assets/img/bell-motoIII-01.jpg" alt="Bell moto 3" />
     </div>
     <div class="w-100">
-      <h2 class="fs-5">Bell Moto 3 Classic <span class="fw-light fs-6">white</span></h2>
+      <h3 class="fs-5">Bell Moto 3 Classic <span class="fw-light fs-6">white</span></h3>
       <p class="fs-4 fw-bold">249,99 € <span class="fw-light fs-6">+ Shipping costs</span></p>
-      <button id="buy-cta" class="btn btn-outline-primary w-100">Purchase</button>
+      <button id="buy-cta" class="btn btn-primary w-100">Purchase</button>
     </div>
   </section>
   </div>
@@ -28,22 +28,57 @@ const product = `
 
 const profileForm = `
   <section id="form-profile">
-    <h1 class="text-uppercase">Step 1 - profile</h1>
-    <form action="" method="POST">
-      <label for="name">Your name</label>
-      <input type="text" id="name" placeholder="enter your name" />
+    <h3 class="fs-5">Step 1 <span class="fs-6">profile</span></h3>
+    <form action="" method="POST" class="row g-3" >
+      <div class="mb-3 col-md-6">
+        <label for="name" class="form-label">Your name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          placeholder="enter your name"
+          min="5"
+          max="20"
+          required
+        />
+      </div>
 
-      <label for="last-name">Your last name</label>
-      <input
-        type="text"
-        id="last-name"
-        placeholder="enter your last name"
-        class="button"
-      />
+      <div class="mb-3 col-md-6">
+        <label for="email" class="form-label">Your email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="enter your email"
+          max="50"
+          required
+        />
+      </div>
+
+      <div class="mb-3 col-md-6">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="enter a new password"
+        />
+      </div>
+
+      <div class="mb-3 col-md-6">
+        <label for="confirmPassword" class="form-label">Confirm password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="confirmPassword"
+          placeholder="repeat password"
+        />
+      </div>
     </form>
   </section>
-  <div class="modal-footer">
-    <button id="button-next" class="btn btn-primary">Next</button>
+  <div class="modal-footer border-top-0">
+    <button id="button-next" class="btn btn-primary w-25">Next</button>
   </div>
 `
 
@@ -59,7 +94,7 @@ const addressForm = `
     </form>
   </section>
   <div class="modal-footer">
-    <button id="button-next" class="btn btn-primary">Validate</button>
+    <button id="button-next" class="btn btn-primary w-25">Next</button>
   </div>
 `
 
@@ -72,7 +107,7 @@ const shippingForm = `
     </form>
   </section>
   <div class="modal-footer">
-    <button id="button-next" class="btn btn-primary">Validate</button>
+    <button id="button-next" class="btn btn-primary w-25">Next</button>
   </div>
 `
 

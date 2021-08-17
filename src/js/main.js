@@ -1,4 +1,5 @@
 import { product, profileForm, addressForm, shippingForm, endForm } from './modules/templatesHtml.js'
+import { danger, warning, success } from './modules/alerts.js'
 
 const mainWrapper = document.querySelector('#main-content')
 
@@ -6,14 +7,57 @@ function buildLayout(html) {
 	mainWrapper.innerHTML = html
 }
 
-function validator (value, template, goTo) {
-	let regex = /[A-Za-z]+/
+function buildAlertMessage(input, html) {
+	input.insertAdjacentHTML('afterend',html)
+}
 
-	if (value === '' || !regex.test(value)) {
-		alert('ande irás, que no has acabado!')
-	} else {
-		buildLayout(template)
-		document.getElementById('button-next').addEventListener('click', goTo)
+function validator (input, template, goTo) {
+	const regex = /[A-Za-z]+/
+	const minMaxRegex = /^.{5,20}$/
+	const max50Regex = /^.{50}$/
+
+	if (input.id === "name") {
+		if(input.value === '') {
+			buildAlertMessage(input, warning)
+			input.focus()
+			return
+		}
+
+		if(!regex.test(input.value)) {
+			buildAlertMessage(input, danger)
+			input.focus()
+			return
+		}
+
+		if(!minMaxRegex.test(input.value)) {
+			buildAlertMessage(input, success)
+			input.focus()
+			return
+		}
+
+		if (input.value !== '' || regex.test(input.value) || minMaxRegex.test(input.value)) {
+			buildLayout(template)
+			document.getElementById('button-next').addEventListener('click', goTo)
+		}
+	}
+
+	if(input.id === "email"){
+		if(input.value === '') {
+			buildAlertMessage(input, warning)
+			input.focus()
+			return
+		}
+
+		if(!max50Regex.test(input.value)) {
+			buildAlertMessage(input, success)
+			input.focus()
+			return
+		}
+
+		if (input.value !== '' || max50Regex.test(input.value)) {
+			buildLayout(template)
+			document.getElementById('button-next').addEventListener('click', goTo)
+		}
 	}
 }
 
@@ -30,10 +74,11 @@ function goToBuy(e) {
 
 function goToAddress(e) {
 	e.preventDefault()
-	const nameInput = document.querySelector('#name')
-	let valuename = nameInput.value
+	const name = document.querySelector('#name')
+	const email = document.getElementById('email')
 
-	validator(valuename, addressForm, goToShipping)
+	validator(name, addressForm, goToShipping)
+	validator(email, addressForm, goToShipping)
 }
 
 function goToShipping(e) {
