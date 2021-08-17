@@ -16,11 +16,15 @@ Validation form project in a process of shopping product
 
 https://aranbeitia.github.io/bell-helmets/
 
+## Logo
+
+![Logo](https://user-images.githubusercontent.com/12766483/129701505-f3588eb5-fa30-48be-98e6-79e171b184ed.png)
+
+## Screenshots
+
+![App Screenshot](https://user-images.githubusercontent.com/12766483/129701380-3b86eec3-f5bc-485d-8c05-fe28b68a5006.png)
+
 ## Lessons Learned
 
 What did you learn while building this project? What challenges did you face and how did you overcome them?
 
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
-## Screenshots
-
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
