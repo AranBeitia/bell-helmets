@@ -9,9 +9,9 @@ Validation form project in a process of shopping product
 
 | Color             | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-| Primary Color | ![#0a192f](https://via.placeholder.com/10/0a192f?text=+) #0a192f |
-| Secondary Color | ![#f8f8f8](https://via.placeholder.com/10/f8f8f8?text=+) #f8f8f8 |
-| Tertiary Color | ![#00b48a](https://via.placeholder.com/10/00b48a?text=+) #00b48a |
+| Primary Color | ![#000000](https://via.placeholder.com/10/0a192f?text=+) #000000 |
+| Secondary Color | ![#d4222b](https://via.placeholder.com/10/f8f8f8?text=+) #d4222b |
+
 ## Demo
 
 https://aranbeitia.github.io/bell-helmets/
@@ -22,7 +22,7 @@ https://aranbeitia.github.io/bell-helmets/
 
 ## Screenshots
 
-![App Screenshot](https://user-images.githubusercontent.com/12766483/129701380-3b86eec3-f5bc-485d-8c05-fe28b68a5006.png)
+![App Screenshot](https://user-images.githubusercontent.com/12766483/129717138-fb37da3d-0b74-4041-88e0-5dcfc9f034b1.png)
 
 ## Lessons Learned
 
