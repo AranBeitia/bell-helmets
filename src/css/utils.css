@@ -2,6 +2,24 @@
   cursor: pointer;
 }
 
-.image-list {
-  max-width: 100px;
+.image-list img {
+  max-width: 3rem;
+  cursor: pointer;
+  transition: transform 250ms, opacity 400ms;
+}
+
+.image-list img:hover {
+  transform: scale(1.2);
+  opacity: 0.5;
+}
+
+.btn-outline-primary {
+  color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.btn-outline-primary:hover {
+  color: var(--bs-light);
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
 }

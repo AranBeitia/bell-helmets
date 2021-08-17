@@ -55,9 +55,11 @@ function goToEnd(e) {
 function init () {
 	document.getElementById('product')
 		.addEventListener('click', (e) => {
-			document
-				.getElementById('imageSelected')
-				.setAttribute('src', e.target.src)
+			if(e.target.matches('.image-list img')) {
+				document
+					.getElementById('imageSelected')
+					.setAttribute('src', e.target.src)
+			}
 		})
 
 	document.querySelector('#buy-cta')

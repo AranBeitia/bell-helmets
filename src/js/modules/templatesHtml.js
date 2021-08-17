@@ -14,12 +14,15 @@ const product = `
         <img class="img-fluid" src="src/assets/img/bell-motoIII-04.jpg" alt="Bell moto 3" />
       </li>
     </ul>
-    <div>
+    <div class="p-2">
       <img id="imageSelected" class="img-fluid" src="src/assets/img/bell-motoIII-01.jpg" alt="Bell moto 3" />
     </div>
+    <div class="w-100">
+      <h2 class="fs-5">Bell Moto 3 Classic <span class="fw-light fs-6">white</span></h2>
+      <p class="fs-4 fw-bold">249,99 € <span class="fw-light fs-6">+ Shipping costs</span></p>
+      <button id="buy-cta" class="btn btn-outline-primary w-100">Purchase</button>
+    </div>
   </section>
-  <div class="modal-footer">
-    <button id="buy-cta" class="btn btn-primary">Buy</button>
   </div>
 `
 
