@@ -17,12 +17,9 @@ function validator (value, template, goTo) {
 	}
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
 	buildLayout(product)
-	document.getElementById('imageSelected')
-	console.log(imageSelected);
-	let buttonCta = document.querySelector('#buy-cta')
-	buttonCta.addEventListener('click', goToBuy)
+	init()
 })
 
 function goToBuy(e) {
@@ -53,6 +50,18 @@ function goToEnd(e) {
 	var value = shippingInput.value
 
 	validator(value, endForm)
+}
+
+function init () {
+	document.getElementById('product')
+		.addEventListener('click', (e) => {
+			document
+				.getElementById('imageSelected')
+				.setAttribute('src', e.target.src)
+		})
+
+	document.querySelector('#buy-cta')
+	.addEventListener('click', goToBuy)
 }
 
 
