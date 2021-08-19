@@ -28,6 +28,90 @@ const product = `
 
 const form = `
 <form action="" method="POST" id="registerForm">
+  <fieldset class="tab">
+    <h3 class="fs-5">Step 1 <span class="fs-6">profile</span></h3>
+    <section class="row g-3">
+    <div class="col-md-6">
+      <label for="name" class="form-label">Your name</label>
+      <input
+        type="text"
+        class="form-control is-valid"
+        id="name"
+        name="name"
+        value="Mark"
+        min="5"
+        max="20"
+        required
+      />
+      <span class="valid-feedback">Looks good!</span>
+    </div>
+
+    <div class="col-md-6">
+      <label for="email" class="form-label">Your email</label>
+      <input
+        type="email"
+        class="form-control is-valid"
+        id="email"
+        value="johndoe@email.com"
+        max="50"
+        required
+        aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback"
+      />
+      <span id="validationServerUsernameFeedback" class="invalid-feedback">Please choose an email.</span>
+    </div>
+
+    <div class="col-md-6">
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        placeholder="enter a new password"
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="confirmPassword" class="form-label">Confirm password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="confirmPassword"
+        placeholder="repeat password"
+      />
+    </div>
+  </section>
+  </fieldset>
+
+  <fieldset class="tab row g-3">
+  <h3 class="fs-5">Step 2 <span class="fs-6">address</span></h3>
+  <div class="col-md-6">
+    <label for="address">Your address</label>
+    <input type="text" id="address" placeholder="enter your address" />
+  </div>
+
+  <div class="col-md-6">
+    <label for="cp">Your CP</label>
+    <input type="text" id="cp" placeholder="enter your CP" />
+  </div>
+  </fieldset>
+
+  <fieldset class="tab row g-3">
+  <h3 class="fs-5">Step 3 <span class="fs-6">shipping</span></h3>
+  <div class="col-md-6">
+    <label for="shipping">Your address</label>
+    <input type="text" id="shipping" placeholder="enter your shipping" />
+  </div>
+  </fieldset>
+  <div class="d-flex justify-content-end">
+    <button id="button-previous" class="btn btn-primary w-25">Previous</button>
+    <button id="button-next" class="btn btn-primary w-25">Next</button>
+  </div>
+  <section class="d-flex justify-content-center">
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+  </section>
 </form>
 `
 
@@ -118,9 +202,5 @@ const endForm = `
 `
 export {
   product,
-  form,
-  registerForm,
-  addressForm,
-  shippingForm,
-  endForm
+  form
 }
