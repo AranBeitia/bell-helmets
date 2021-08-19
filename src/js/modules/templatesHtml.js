@@ -26,37 +26,44 @@ const product = `
   </div>
 `
 
-const profileForm = `
-  <section id="form-profile">
+const form = `
+<form action="" method="POST" id="registerForm">
+</form>
+`
+
+const registerForm = `
     <h3 class="fs-5">Step 1 <span class="fs-6">profile</span></h3>
-    <form action="" method="POST" class="row g-3" >
-      <div class="mb-3 col-md-6">
+    <fieldset class="row g-3">
+      <div class="col-md-6">
         <label for="name" class="form-label">Your name</label>
         <input
           type="text"
-          class="form-control"
+          class="form-control is-valid"
           id="name"
           name="name"
-          placeholder="enter your name"
+          value="Mark"
           min="5"
           max="20"
           required
         />
+        <span class="valid-feedback">Looks good!</span>
       </div>
 
-      <div class="mb-3 col-md-6">
+      <div class="col-md-6">
         <label for="email" class="form-label">Your email</label>
         <input
           type="email"
-          class="form-control"
+          class="form-control is-valid"
           id="email"
-          placeholder="enter your email"
+          value="johndoe@email.com"
           max="50"
           required
+          aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback"
         />
+        <span id="validationServerUsernameFeedback" class="invalid-feedback">Please choose an email.</span>
       </div>
 
-      <div class="mb-3 col-md-6">
+      <div class="col-md-6">
         <label for="password" class="form-label">Password</label>
         <input
           type="password"
@@ -66,7 +73,7 @@ const profileForm = `
         />
       </div>
 
-      <div class="mb-3 col-md-6">
+      <div class="col-md-6">
         <label for="confirmPassword" class="form-label">Confirm password</label>
         <input
           type="password"
@@ -75,48 +82,44 @@ const profileForm = `
           placeholder="repeat password"
         />
       </div>
-    </form>
-  </section>
-  <div class="modal-footer border-top-0">
-    <button id="button-next" class="btn btn-primary w-25">Next</button>
-  </div>
+      <button id="button-next" class="btn btn-primary w-25">Next</button>
+    </fieldset>
 `
 
 const addressForm = `
-  <section id="form-address">
-    <h1>Step 2 - address</h1>
-    <form action="" method="POST">
+<h3 class="fs-5">Step 2 <span class="fs-6">address</span></h3>
+  <fieldset class="row g-3">
+    <div class="col-md-6">
       <label for="address">Your address</label>
       <input type="text" id="address" placeholder="enter your address" />
+    </div>
 
+    <div class="col-md-6">
       <label for="cp">Your CP</label>
       <input type="text" id="cp" placeholder="enter your CP" />
-    </form>
-  </section>
-  <div class="modal-footer">
+    </div>
     <button id="button-next" class="btn btn-primary w-25">Next</button>
-  </div>
+  </fieldset>
 `
 
 const shippingForm = `
-  <section id="form-shipping">
-    <h1>Step 3 - SHIPPING</h1>
-    <form action="" method="POST">
+<h3 class="fs-5">Step 3 <span class="fs-6">shipping</span></h3>
+  <fieldset class="row g-3">
+    <div class="col-md-6">
       <label for="shipping">Your address</label>
       <input type="text" id="shipping" placeholder="enter your shipping" />
-    </form>
-  </section>
-  <div class="modal-footer">
+    </div>
     <button id="button-next" class="btn btn-primary w-25">Next</button>
-  </div>
+  </fieldset>
 `
 
 const endForm = `
-  <section id="form-end">END</section>
+  <section id="form-end">resume of the form</section>
 `
 export {
   product,
-  profileForm,
+  form,
+  registerForm,
   addressForm,
   shippingForm,
   endForm

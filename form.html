@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="src/css/main.css">
+  <script type="module" src="src/js/main.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <main class="container">
+    <form action="" method="POST" id="registerForm">
+      <h3 class="fs-5">Step 1 <span class="fs-6">profile</span></h3>
+        <fieldset class="row g-3">
+          <div class="col-md-6">
+            <label for="name" class="form-label">Your name</label>
+            <input
+              type="text"
+              class="form-control is-valid"
+              id="name"
+              name="name"
+              value="Mark"
+              min="5"
+              max="20"
+              required
+            />
+            <span class="valid-feedback">Looks good!</span>
+          </div>
+
+          <div class="col-md-6">
+            <label for="email" class="form-label">Your email</label>
+            <input
+              type="email"
+              class="form-control is-valid"
+              id="email"
+              value="johndoe@email.com"
+              max="50"
+              required
+              aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback"
+            />
+            <span id="validationServerUsernameFeedback" class="invalid-feedback">Please choose an email.</span>
+          </div>
+
+          <div class="col-md-6">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="enter a new password"
+            />
+          </div>
+
+          <div class="col-md-6">
+            <label for="confirmPassword" class="form-label">Confirm password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="confirmPassword"
+              placeholder="repeat password"
+            />
+          </div>
+          <button id="button-next" class="btn btn-primary w-25">Next</button>
+        </fieldset>
+
+        <h3 class="fs-5">Step 2 <span class="fs-6">address</span></h3>
+      <fieldset class="row g-3">
+        <div class="col-md-6">
+          <label for="address">Your address</label>
+          <input type="text" id="address" placeholder="enter your address" />
+        </div>
+
+        <div class="col-md-6">
+          <label for="cp">Your CP</label>
+          <input type="text" id="cp" placeholder="enter your CP" />
+        </div>
+        <button id="button-next" class="btn btn-primary w-25">Next</button>
+      </fieldset>
+
+      <h3 class="fs-5">Step 3 <span class="fs-6">shipping</span></h3>
+      <fieldset class="row g-3">
+        <div class="col-md-6">
+          <label for="shipping">Your address</label>
+          <input type="text" id="shipping" placeholder="enter your shipping" />
+        </div>
+        <button id="button-next" class="btn btn-primary w-25">Next</button>
+      </fieldset>
+
+      <section id="form-end">resume of the form</section>
+
+    </form>
+  </main>
+</body>
+</html>

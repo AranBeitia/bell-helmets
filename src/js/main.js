@@ -1,10 +1,16 @@
-import { product, profileForm, addressForm, shippingForm, endForm } from './modules/templatesHtml.js'
+import { product, form, registerForm, addressForm, shippingForm, endForm } from './modules/templatesHtml.js'
 import { danger, warning, success } from './modules/alerts.js'
 
 const mainWrapper = document.querySelector('#main-content')
 
 function buildLayout(html) {
 	mainWrapper.innerHTML = html
+}
+
+function buildForm(fieldset) {
+	buildLayout(form)
+	const formId = document.getElementById('registerForm')
+	formId.innerHTML = fieldset
 }
 
 function buildAlertMessage(input, html) {
@@ -68,33 +74,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function goToBuy(e) {
 	e.preventDefault()
-	buildLayout(profileForm)
+	buildForm(registerForm)
 	document.getElementById('button-next').addEventListener('click', goToAddress)
 }
 
 function goToAddress(e) {
 	e.preventDefault()
-	const name = document.querySelector('#name')
-	const email = document.getElementById('email')
-
-	validator(name, addressForm, goToShipping)
-	validator(email, addressForm, goToShipping)
+	buildForm(addressForm)
+	document.getElementById('button-next').addEventListener('click', goToShipping)
+	// const name = document.querySelector('#name')
+	// const email = document.getElementById('email')
+	// validator(name, addressForm, goToShipping)
+	// validator(email, addressForm, goToShipping)
 }
 
 function goToShipping(e) {
 	e.preventDefault()
-	const addressInput = document.querySelector('#address')
-	var value = addressInput.value
+	buildForm(shippingForm)
+	document.getElementById('button-next').addEventListener('click', goToEnd)
+	// const addressInput = document.querySelector('#address')
+	// var value = addressInput.value
 
-	validator(value, shippingForm, goToEnd)
+	// validator(value, shippingForm, goToEnd)
 }
 
 function goToEnd(e) {
 	e.preventDefault()
-	const shippingInput = document.getElementById('shipping')
-	var value = shippingInput.value
+	buildForm(endForm)
+	// const shippingInput = document.getElementById('shipping')
+	// var value = shippingInput.value
 
-	validator(value, endForm)
+	// validator(value, endForm)
 }
 
 function init () {
