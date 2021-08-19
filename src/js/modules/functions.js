@@ -1,18 +1,36 @@
-// import { mainWrapper } from "../variables";
+const previousBtn = document.getElementById('button-previous')
+let countTab = 0
+showTab(countTab)
 
-// document.addEventListener('DOMContentLoaded', getEvents)
 
-// function getEvents () {
-//   buildLayout()
-// }
+function showTab (n) {
+  const fieldset = document.getElementsByClassName('tab')
+  fieldset[n].classList.add('--is-visible')
 
-// function buildLayout(html) {
-//   mainWrapper.innerHTML = html
-// }
-
-function imageSelection () {
-  const imageSelected = document.getElementById('imageSelected')
-  console.log(imageSelected);
+  if(n == 0) {
+    previousBtn.classList.add('--is-hidden')
+  }
+  stepIndicator (n)
 }
 
-export { imageSelection }
+function nextPreview () {
+
+}
+
+function validate() {
+
+}
+
+function stepIndicator (currentStep) {
+  const steps = document.querySelectorAll('.step')
+
+  for (let i = 0; i < steps.length; i++) {
+    steps[currentStep].classList.add('step--is-active')
+
+    if(steps[i] < steps[currentStep]) {
+      steps[i].classList.add('step--is-finish')
+    }
+  }
+}
+
+export { showTab }

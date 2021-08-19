@@ -1,6 +1,8 @@
 import { product, form, registerForm, addressForm, shippingForm, endForm } from './modules/templatesHtml.js'
+// import { showTab } from './modules/functions.js'
 import { danger, warning, success } from './modules/alerts.js'
 
+// showTab()
 const mainWrapper = document.querySelector('#main-content')
 
 function buildLayout(html) {

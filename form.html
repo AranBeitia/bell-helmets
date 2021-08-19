@@ -7,14 +7,21 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="src/css/main.css">
-  <script type="module" src="src/js/main.js"></script>
+  <script type="module" src="src/js/modules/functions.js"></script>
   <title>Document</title>
 </head>
 <body>
   <main class="container">
     <form action="" method="POST" id="registerForm">
-      <h3 class="fs-5">Step 1 <span class="fs-6">profile</span></h3>
-        <fieldset class="row g-3">
+      <section class="d-flex justify-content-center">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+      </section>
+      <fieldset class="tab">
+          <h3 class="fs-5">Step 1 <span class="fs-6">profile</span></h3>
+          <section class="row g-3">
           <div class="col-md-6">
             <label for="name" class="form-label">Your name</label>
             <input
@@ -63,11 +70,11 @@
               placeholder="repeat password"
             />
           </div>
-          <button id="button-next" class="btn btn-primary w-25">Next</button>
+        </section>
         </fieldset>
 
+        <fieldset class="tab row g-3">
         <h3 class="fs-5">Step 2 <span class="fs-6">address</span></h3>
-      <fieldset class="row g-3">
         <div class="col-md-6">
           <label for="address">Your address</label>
           <input type="text" id="address" placeholder="enter your address" />
@@ -77,20 +84,19 @@
           <label for="cp">Your CP</label>
           <input type="text" id="cp" placeholder="enter your CP" />
         </div>
-        <button id="button-next" class="btn btn-primary w-25">Next</button>
       </fieldset>
 
-      <h3 class="fs-5">Step 3 <span class="fs-6">shipping</span></h3>
-      <fieldset class="row g-3">
+      <fieldset class="tab row g-3">
+        <h3 class="fs-5">Step 3 <span class="fs-6">shipping</span></h3>
         <div class="col-md-6">
           <label for="shipping">Your address</label>
           <input type="text" id="shipping" placeholder="enter your shipping" />
         </div>
-        <button id="button-next" class="btn btn-primary w-25">Next</button>
       </fieldset>
-
-      <section id="form-end">resume of the form</section>
-
+      <div class="d-flex justify-content-end">
+        <button id="button-previous" class="btn btn-primary w-25">Previous</button>
+        <button id="button-next" class="btn btn-primary w-25">Next</button>
+      </div>
     </form>
   </main>
 </body>

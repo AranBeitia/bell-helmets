@@ -1,0 +1,18 @@
+.step {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  margin: 1rem;
+  background-color: var(--bs-primary);
+  opacity: 0.3;
+}
+
+.step--is-active {
+  opacity: 1;
+}
+
+.step--is-finish {
+  background-color: var(--bs-secondary);
+  opacity: 1;
+}
