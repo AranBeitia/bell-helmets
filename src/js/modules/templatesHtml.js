@@ -27,7 +27,7 @@ const product = `
 `
 
 const form = `
-<form action="" method="POST" id="registerForm">
+<form action="" method="POST" id="registerForm" name="registerForm">
   <fieldset class="tab">
     <h3 class="fs-5">Step 1 <span class="fs-6">profile</span></h3>
     <section class="row g-3">
@@ -35,29 +35,25 @@ const form = `
       <label for="name" class="form-label">Your name</label>
       <input
         type="text"
-        class="form-control is-valid"
+        class="form-control"
         id="name"
         name="name"
-        value="Mark"
         min="5"
         max="20"
         required
       />
-      <span class="valid-feedback">Looks good!</span>
     </div>
 
     <div class="col-md-6">
       <label for="email" class="form-label">Your email</label>
       <input
         type="email"
-        class="form-control is-valid"
+        class="form-control"
         id="email"
-        value="johndoe@email.com"
+        name="email"
         max="50"
         required
-        aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback"
       />
-      <span id="validationServerUsernameFeedback" class="invalid-feedback">Please choose an email.</span>
     </div>
 
     <div class="col-md-6">
@@ -66,6 +62,7 @@ const form = `
         type="password"
         class="form-control"
         id="password"
+        name="password"
         placeholder="enter a new password"
       />
     </div>
@@ -76,6 +73,7 @@ const form = `
         type="password"
         class="form-control"
         id="confirmPassword"
+        name="confirmPassword"
         placeholder="repeat password"
       />
     </div>
@@ -110,91 +108,8 @@ const form = `
     <span class="step"></span>
     <span class="step"></span>
     <span class="step"></span>
-    <span class="step"></span>
   </section>
 </form>
-`
-
-const registerForm = `
-    <h3 class="fs-5">Step 1 <span class="fs-6">profile</span></h3>
-    <fieldset class="row g-3">
-      <div class="col-md-6">
-        <label for="name" class="form-label">Your name</label>
-        <input
-          type="text"
-          class="form-control is-valid"
-          id="name"
-          name="name"
-          value="Mark"
-          min="5"
-          max="20"
-          required
-        />
-        <span class="valid-feedback">Looks good!</span>
-      </div>
-
-      <div class="col-md-6">
-        <label for="email" class="form-label">Your email</label>
-        <input
-          type="email"
-          class="form-control is-valid"
-          id="email"
-          value="johndoe@email.com"
-          max="50"
-          required
-          aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback"
-        />
-        <span id="validationServerUsernameFeedback" class="invalid-feedback">Please choose an email.</span>
-      </div>
-
-      <div class="col-md-6">
-        <label for="password" class="form-label">Password</label>
-        <input
-          type="password"
-          class="form-control"
-          id="password"
-          placeholder="enter a new password"
-        />
-      </div>
-
-      <div class="col-md-6">
-        <label for="confirmPassword" class="form-label">Confirm password</label>
-        <input
-          type="password"
-          class="form-control"
-          id="confirmPassword"
-          placeholder="repeat password"
-        />
-      </div>
-      <button id="button-next" class="btn btn-primary w-25">Next</button>
-    </fieldset>
-`
-
-const addressForm = `
-<h3 class="fs-5">Step 2 <span class="fs-6">address</span></h3>
-  <fieldset class="row g-3">
-    <div class="col-md-6">
-      <label for="address">Your address</label>
-      <input type="text" id="address" placeholder="enter your address" />
-    </div>
-
-    <div class="col-md-6">
-      <label for="cp">Your CP</label>
-      <input type="text" id="cp" placeholder="enter your CP" />
-    </div>
-    <button id="button-next" class="btn btn-primary w-25">Next</button>
-  </fieldset>
-`
-
-const shippingForm = `
-<h3 class="fs-5">Step 3 <span class="fs-6">shipping</span></h3>
-  <fieldset class="row g-3">
-    <div class="col-md-6">
-      <label for="shipping">Your address</label>
-      <input type="text" id="shipping" placeholder="enter your shipping" />
-    </div>
-    <button id="button-next" class="btn btn-primary w-25">Next</button>
-  </fieldset>
 `
 
 const endForm = `
