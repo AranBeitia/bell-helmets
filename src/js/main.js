@@ -32,8 +32,8 @@ function goToForm(e) {
 	buildLayout(form)
 	showTab(countTab)
 
-	document.getElementById('button-previous').addEventListener('click', nextPreview)
-	document.getElementById('button-next').addEventListener('click', nextPreview)
+	document.getElementById('button-previous').addEventListener('click', preview)
+	document.getElementById('button-next').addEventListener('click', next)
 
 }
 
@@ -46,7 +46,9 @@ function showTab (n) {
 
   if(n === 0) {
     previousBtn.classList.add('--is-hidden')
-  }
+  } else {
+		previousBtn.classList.remove('--is-hidden')
+	}
 
 	if(n === fieldset.length -1) {
 		nextBtn.innerHTML = 'Submit'
@@ -54,7 +56,7 @@ function showTab (n) {
   stepIndicator (n)
 }
 
-function nextPreview (e) {
+function next(e) {
 	e.preventDefault()
 	const fieldset = document.getElementsByClassName('tab')
 
@@ -62,7 +64,17 @@ function nextPreview (e) {
 	fieldset[countTab].classList.add('--is-hidden')
 
 	countTab = countTab + 1
+
+	if(countTab >= fieldset.length) {
+		document.getElementById('registerForm').submit()
+		return false
+	}
 	showTab(countTab)
+}
+
+function preview (e) {
+	e.preventDefault()
+	window.history.go(-1)
 }
 
 function buildAlertMessage(input, html) {

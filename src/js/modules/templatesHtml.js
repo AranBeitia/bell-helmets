@@ -31,80 +31,175 @@ const form = `
   <fieldset class="tab">
     <h3 class="fs-5">Step 1 <span class="fs-6">profile</span></h3>
     <section class="row g-3">
-    <div class="col-md-6">
-      <label for="name" class="form-label">Your name</label>
-      <input
-        type="text"
-        class="form-control"
-        id="name"
-        name="name"
-        min="5"
-        max="20"
-        required
-      />
-    </div>
+      <div class="col-md-6">
+        <label for="name" class="form-label">Your name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          min="5"
+          max="20"
+          required
+        />
+      </div>
 
-    <div class="col-md-6">
-      <label for="email" class="form-label">Your email</label>
-      <input
-        type="email"
-        class="form-control"
-        id="email"
-        name="email"
-        max="50"
-        required
-      />
-    </div>
+      <div class="col-md-6">
+        <label for="email" class="form-label">Your email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          max="50"
+          required
+        />
+      </div>
 
-    <div class="col-md-6">
-      <label for="password" class="form-label">Password</label>
-      <input
-        type="password"
-        class="form-control"
-        id="password"
-        name="password"
-        placeholder="enter a new password"
-      />
-    </div>
+      <div class="col-md-6">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          placeholder="enter a new password"
+        />
+      </div>
 
-    <div class="col-md-6">
-      <label for="confirmPassword" class="form-label">Confirm password</label>
-      <input
-        type="password"
-        class="form-control"
-        id="confirmPassword"
-        name="confirmPassword"
-        placeholder="repeat password"
-      />
-    </div>
-  </section>
+      <div class="col-md-6">
+        <label for="confirmPassword" class="form-label">Confirm password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="confirmPassword"
+          name="confirmPassword"
+          placeholder="repeat password"
+        />
+      </div>
+    </section>
+  </fieldset>
+
+  <fieldset class="tab">
+    <h3 class="fs-5">Step 2 <span class="fs-6">address</span></h3>
+    <section class="row g-3">
+      <div class="col-md-6">
+        <label for="firstName" class="form-label">Your first name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+          name="firstName"
+          max="20"
+          required
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="lastName" class="form-label">Your last name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastName"
+          name="lastName"
+          max="20"
+          required
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="birthday" class="form-label">Your birthday</label>
+        <input
+          type="date"
+          class="form-control"
+          id="birthday"
+          name="birthday"
+          required
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="address" class="form-label">Your address</label>
+        <input
+          type="text"
+          class="form-control"
+          id="address"
+          name="address"
+          max="50"
+          required
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="address2" class="form-label">Your address2</label>
+        <input
+          type="text"
+          class="form-control"
+          id="address2"
+          name="address2"
+          max="50"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="postalCode" class="form-label">Your postal code</label>
+        <input
+          type="number"
+          class="form-control"
+          id="postalCode"
+          name="postalCode"
+          max="5"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="country" class="form-label">Your country</label>
+        <select class="form-select" name="country" id="country" required>
+          <option data-countryCode="AD" value="Andorra">Andorra</option>
+          <option data-countryCode="FR" value="France">France</option>
+          <option data-countryCode="DE" value="Germany">Germany</option>
+          <option data-countryCode="GR" value="Greece">Greece</option>
+          <option data-countryCode="ES" value="Spain">Spain</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="countryCode" class="form-label">Your country Code</label>
+        <select class="form-select" name="countryCode" id="" required>
+          <option data-countryCode="AD" value="376" selected>Andorra (+376)</option>
+          <option data-countryCode="FR" value="33">France (+33)</option>
+          <option data-countryCode="DE" value="49">Germany (+49)</option>
+          <option data-countryCode="GR" value="30">Greece (+30)</option>
+          <option data-countryCode="ES" value="34">Spain (+34)</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="phone" class="form-label">Your phone number</label>
+        <input
+          type="tel"
+          class="form-control"
+          id="phone"
+          name="phone"
+          max="9"
+          pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+          required
+        />
+      </div>
+      <div class="col-md-6 form-check">
+        <input class="form-check-input" type="checkbox" value="" id="checkData" name="checkData">
+        <label class="form-check-label" for="checkData">This is my regular address</label>
+      </div>
+    </section>
   </fieldset>
 
   <fieldset class="tab row g-3">
-  <h3 class="fs-5">Step 2 <span class="fs-6">address</span></h3>
-  <div class="col-md-6">
-    <label for="address">Your address</label>
-    <input type="text" id="address" placeholder="enter your address" />
-  </div>
-
-  <div class="col-md-6">
-    <label for="cp">Your CP</label>
-    <input type="text" id="cp" placeholder="enter your CP" />
-  </div>
+    <h3 class="fs-5">Step 3 <span class="fs-6">shipping</span></h3>
+    <div class="col-md-6">
+      <label for="shipping">Your address</label>
+      <input type="text" id="shipping" placeholder="enter your shipping" />
+    </div>
   </fieldset>
 
-  <fieldset class="tab row g-3">
-  <h3 class="fs-5">Step 3 <span class="fs-6">shipping</span></h3>
-  <div class="col-md-6">
-    <label for="shipping">Your address</label>
-    <input type="text" id="shipping" placeholder="enter your shipping" />
-  </div>
-  </fieldset>
   <div class="d-flex justify-content-end">
     <button id="button-previous" class="btn btn-primary w-25">Previous</button>
     <button id="button-next" class="btn btn-primary w-25">Next</button>
   </div>
+
   <section class="d-flex justify-content-center">
+    <span class="step"></span>
     <span class="step"></span>
     <span class="step"></span>
     <span class="step"></span>

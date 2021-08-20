@@ -1,0 +1,16 @@
+.btn-primary {
+  color: var(--bs-light);
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.btn-check:active+.btn-primary, 
+.btn-check:checked+.btn-primary, 
+.btn-primary.active, 
+.btn-primary:active, 
+.show>.btn-primary.dropdown-toggle,
+.btn-primary:hover {
+  color: var(--bs-light);
+  background-color: var(--bs-secondary);
+  border-color: var(--bs-secondary);
+}
