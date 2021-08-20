@@ -185,12 +185,24 @@ const form = `
     </section>
   </fieldset>
 
-  <fieldset class="tab row g-3">
+  <fieldset class="tab">
     <h3 class="fs-5">Step 3 <span class="fs-6">shipping</span></h3>
-    <div class="col-md-6">
-      <label for="shipping">Your address</label>
-      <input type="text" id="shipping" placeholder="enter your shipping" />
-    </div>
+    <section class="row g-3">
+      <div class="col-md-6">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="shipment" id="freeShipment">
+          <label class="form-check-label" for="freeShipment">Free shipment (72H) ( no extra cost )</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="shipment" id="extraShipping" checked>
+          <label class="form-check-label" for="extraShipping">Extra shipping (48h) ( +5 € )</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="shipment" id="premium" checked>
+          <label class="form-check-label" for="premium">Premium (24h) ( + 10€ )</label>
+        </div>
+      </div>
+    </section>
   </fieldset>
 
   <div class="d-flex justify-content-end">
