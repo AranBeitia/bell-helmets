@@ -38,8 +38,5 @@ const success = `
   </div>
 `
 
-
-
-
 export { empty, invalidLength, invalidType, invalidPassword, samePassword }
 

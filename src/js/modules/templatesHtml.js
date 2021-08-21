@@ -144,6 +144,7 @@ const form = `
           id="postalCode"
           name="postalCode"
           max="5"
+          required
         />
       </div>
       <div class="col-md-6">

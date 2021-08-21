@@ -82,15 +82,31 @@ function buildAlertMessage(input, html) {
 }
 
 function validate() {
+	let tabs = document.getElementsByClassName('tab')
 	let valid = true
 	const inputName = document.forms['registerForm']['name']
 	const inputEmail = document.forms['registerForm']['email']
 	const inputPsw = document.forms['registerForm']['password']
 	const inputConfirmPsw = document.forms['registerForm']['confirmPassword']
+	const inputFirstName = document.forms['registerForm']['firstName']
+	const inputLastName = document.forms['registerForm']['inputLastName']
+	const inputBirthday = document.forms['registerForm']['inputBirthday']
+	const inputAddress = document.forms['registerForm']['address']
+	const inputPostalCode = document.forms['registerForm']['postalCode']
+	// const inputCountry = document.forms['registerForm']['country']
+	const inputPhone = document.forms['registerForm']['phone']
 	const minMaxRegex = /^.{5,20}$/
 	const max50Regex = /^.{1,50}$/
+	const max5Regex = /^.{1,5}$/
+	const max9Regex = /^.{1,5}$/
 	const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 	const pswRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,20}$/
+
+	console.log(tabs[0]);
+	console.log(tabs[1]);
+	console.log(tabs[2]);
+
+	if(tabs[0]) {
 
 	if(inputName.value === '') {
 		buildAlertMessage(inputName, empty)
@@ -131,6 +147,66 @@ function validate() {
 		inputConfirmPsw.focus()
 		return valid = false
 	}
+	}
+
+// 	if(tabs[1]){
+// 	if(inputFirstName.value === '') {
+// 		buildAlertMessage(inputFirstName, empty)
+// 		inputFirstName.focus()
+// 		return valid = false
+// 	} else if(!minMaxRegex.test(inputFirstName.value)){
+// 		buildAlertMessage(inputFirstName, invalidLength)
+// 		inputFirstName.focus()
+// 		return valid = false
+// 	}
+// }
+
+
+	// if(inputLastName.value === '') {
+	// 	buildAlertMessage(inputFirstName, empty)
+	// 	inputLastName.focus()
+	// 	return value = false
+	// } else if (!minMaxRegex.test(inputLastName.value)){
+	// 	buildAlertMessage(inputFirstName, invalidLength)
+	// 	inputLastName.focus()
+	// 	return value = false
+	// }
+
+	// if(inputBirthday.value === '') {
+	// 	buildAlertMessage(inputFirstName, empty)
+	// 	inputBirthday.focus()
+	// 	return value = false
+	// }
+
+	// if(inputAddress.value === '') {
+	// 	buildAlertMessage(inputAddress, empty)
+	// 	inputAddress.focus()
+	// 	return value = false
+	// } else if (!max50Regex.test(inputAddress.value)) {
+	// 	buildAlertMessage(inputAddress, invalidLength)
+	// 	inputAddress.focus()
+	// 	return value = false
+	// }
+
+	// if(inputPostalCode.value === '') {
+	// 	buildAlertMessage(inputPostalCode, empty)
+	// 	inputPostalCode.focus()
+	// 	return valid = false
+	// } else if (!max5Regex.test(inputPostalCode.value)) {
+	// 	buildAlertMessage(inputPostalCode, invalidLength)
+	// 	inputPostalCode.focus()
+	// 	return valid = false
+	// }
+
+	// if(inputPhone.value === '') {
+	// 	buildAlertMessage(inputPhone, empty)
+	// 	inputPhone.focus()
+	// 	return valid = false
+	// } else if (!max9Regex.test(inputPhone.value)) {
+	// 	buildAlertMessage(inputPostalCode, invalidLength)
+	// 	inputPostalCode.focus()
+	// 	return valid = false
+	// }
 
 	if(valid) {
 		document.querySelectorAll('.step')[countTab].classList.replace('step--is-active', 'step--is-finish')
