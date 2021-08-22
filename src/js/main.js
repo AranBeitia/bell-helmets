@@ -3,6 +3,7 @@ import { empty, invalidLength, invalidType, invalidPassword, samePassword } from
 
 const mainWrapper = document.querySelector('#main-content')
 
+
 function buildLayout(html) {
 	mainWrapper.innerHTML = html
 }
@@ -44,37 +45,42 @@ function showTab (n) {
 
   fieldset[n].classList.add('--is-visible')
 
-  if(n === 0) {
+  if(n === 0 || n === fieldset.length - 1) {
     previousBtn.classList.add('--is-hidden')
   } else {
 		previousBtn.classList.remove('--is-hidden')
 	}
 
-	if(n === fieldset.length -1) {
+	if(n === fieldset.length - 2) {
 		nextBtn.innerHTML = 'Submit'
+	}
+
+	if(n === fieldset.length - 1) {
+		nextBtn.classList.add('--is-hidden')
 	}
   stepIndicator (n)
 }
 
-function next(e) {
-	e.preventDefault()
+function next() {
 	const fieldset = document.getElementsByClassName('tab')
 
 	if(!validate()) return false
-	fieldset[countTab].classList.add('--is-hidden')
+	fieldset[countTab].classList.remove('--is-visible')
 
 	countTab = countTab + 1
 
 	if(countTab >= fieldset.length) {
-		document.getElementById('registerForm').submit()
+		document.getElementById('registerForm').onsubmit = function () {
+
+
+		}
 		return false
 	}
 	showTab(countTab)
 }
 
-function preview (e) {
-	e.preventDefault()
-	window.history.go(-1)
+function preview () {
+	history.go(-1)
 }
 
 function buildAlertMessage(input, html) {
@@ -149,21 +155,21 @@ function validate() {
 		// }
 	}
 
-	if(tabs[1]){
-		if(inputFirstName.value === '') {
-			buildAlertMessage(inputFirstName, empty)
-			inputFirstName.focus()
-			return valid = false
-		} else if(!minMaxRegex.test(inputFirstName.value)){
-			buildAlertMessage(inputFirstName, invalidLength)
-			inputFirstName.focus()
-			return valid = false
-		}
+	// if(tabs[1]){
+	// 	if(inputFirstName.value === '') {
+	// 		buildAlertMessage(inputFirstName, empty)
+	// 		inputFirstName.focus()
+	// 		return valid = false
+	// 	} else if(!minMaxRegex.test(inputFirstName.value)){
+	// 		buildAlertMessage(inputFirstName, invalidLength)
+	// 		inputFirstName.focus()
+	// 		return valid = false
+	// 	}
 
 		// if(valid) {
 		// 	tabs[1].classList.replace('--is-visible', '--is-hidden')
 		// }
-	}
+	// }
 
 
 	// if(inputLastName.value === '') {

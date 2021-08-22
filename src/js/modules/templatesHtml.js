@@ -206,8 +206,12 @@ const form = `
     </section>
   </fieldset>
 
-  <div class="d-flex justify-content-end">
-    <button id="button-previous" class="btn btn-primary w-25">Previous</button>
+  <fieldset class="tab">
+    <h3 class="fs-5">Resume of the form</h3>
+  </fieldset>
+
+  <div class="d-flex justify-content-end my-4">
+    <button id="button-previous" class="btn btn-primary w-25 me-4">Previous</button>
     <button id="button-next" class="btn btn-primary w-25">Next</button>
   </div>
 
@@ -220,9 +224,6 @@ const form = `
 </form>
 `
 
-const endForm = `
-  <section id="form-end">resume of the form</section>
-`
 export {
   product,
   form
