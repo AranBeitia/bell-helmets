@@ -103,63 +103,67 @@ function validate() {
 	const pswRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,20}$/
 
 	console.log(tabs[0]);
-	console.log(tabs[1]);
-	console.log(tabs[2]);
 
 	if(tabs[0]) {
+		if(inputName.value === '') {
+			buildAlertMessage(inputName, empty)
+			inputName.focus()
+			return valid = false
+		} else if(!minMaxRegex.test(inputName.value)) {
+			buildAlertMessage(inputName, invalidLength)
+			inputName.focus()
+			return valid = false
+		}
 
-	if(inputName.value === '') {
-		buildAlertMessage(inputName, empty)
-		inputName.focus()
-		return valid = false
-	} else if(!minMaxRegex.test(inputName.value)) {
-		buildAlertMessage(inputName, invalidLength)
-		inputName.focus()
-		return valid = false
+		if(inputEmail.value === '') {
+			buildAlertMessage(inputEmail, empty)
+			inputEmail.focus()
+			return valid = false
+		} else if(!max50Regex.test(inputEmail.value)) {
+			buildAlertMessage(inputEmail, invalidLength)
+			inputEmail.focus()
+			return valid = false
+		} else if (!emailRegex.test(inputEmail.value)) {
+			buildAlertMessage(inputEmail, invalidType)
+			inputEmail.focus()
+			return valid = false
+		}
+
+		if(inputPsw.value === '') {
+			buildAlertMessage(inputPsw, empty)
+			inputPsw.focus()
+			return valid = false
+		} else if(!pswRegex.test(inputPsw.value)) {
+			buildAlertMessage(inputPsw, invalidPassword)
+			inputPsw.focus()
+			return valid = false
+		}
+
+		if(inputConfirmPsw.value !== inputPsw.value) {
+			buildAlertMessage(inputConfirmPsw, samePassword)
+			inputConfirmPsw.focus()
+			return valid = false
+		}
+		// if(valid) {
+		// 	tabs[0].classList.replace('--is-visible', '--is-hidden')
+		// }
 	}
 
-	if(inputEmail.value === '') {
-		buildAlertMessage(inputEmail, empty)
-		inputEmail.focus()
-		return valid = false
-	} else if(!max50Regex.test(inputEmail.value)) {
-		buildAlertMessage(inputEmail, invalidLength)
-		inputEmail.focus()
-		return valid = false
-	} else if (!emailRegex.test(inputEmail.value)) {
-		buildAlertMessage(inputEmail, invalidType)
-		inputEmail.focus()
-		return valid = false
-	}
+	if(tabs[1]){
+		if(inputFirstName.value === '') {
+			buildAlertMessage(inputFirstName, empty)
+			inputFirstName.focus()
+			return valid = false
+		} else if(!minMaxRegex.test(inputFirstName.value)){
+			buildAlertMessage(inputFirstName, invalidLength)
+			inputFirstName.focus()
+			return valid = false
+		}
 
-	if(inputPsw.value === '') {
-		buildAlertMessage(inputPsw, empty)
-		inputPsw.focus()
-		return valid = false
-	} else if(!pswRegex.test(inputPsw.value)) {
-		buildAlertMessage(inputPsw, invalidPassword)
-		inputPsw.focus()
-		return valid = false
+		// if(valid) {
+		// 	tabs[1].classList.replace('--is-visible', '--is-hidden')
+		// }
 	}
-
-	if(inputConfirmPsw.value !== inputPsw.value) {
-		buildAlertMessage(inputConfirmPsw, samePassword)
-		inputConfirmPsw.focus()
-		return valid = false
-	}
-	}
-
-// 	if(tabs[1]){
-// 	if(inputFirstName.value === '') {
-// 		buildAlertMessage(inputFirstName, empty)
-// 		inputFirstName.focus()
-// 		return valid = false
-// 	} else if(!minMaxRegex.test(inputFirstName.value)){
-// 		buildAlertMessage(inputFirstName, invalidLength)
-// 		inputFirstName.focus()
-// 		return valid = false
-// 	}
-// }
 
 
 	// if(inputLastName.value === '') {
