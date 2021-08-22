@@ -28,7 +28,7 @@ const product = `
 
 const form = `
 <form action="" method="POST" id="registerForm" name="registerForm">
-  <fieldset class="tab">
+  <fieldset class="tab" data-fieldset="profile">
     <h3 class="fs-5">Step 1 <span class="fs-6">profile</span></h3>
     <section class="row g-3">
       <div class="col-md-6">
@@ -80,7 +80,7 @@ const form = `
     </section>
   </fieldset>
 
-  <fieldset class="tab">
+  <fieldset class="tab" data-fieldset="address">
     <h3 class="fs-5">Step 2 <span class="fs-6">address</span></h3>
     <section class="row g-3">
       <div class="col-md-6">
@@ -186,7 +186,7 @@ const form = `
     </section>
   </fieldset>
 
-  <fieldset class="tab">
+  <fieldset class="tab" data-fieldset="shipping">
     <h3 class="fs-5">Step 3 <span class="fs-6">shipping</span></h3>
     <section class="row g-3">
       <div class="col-md-6">
@@ -206,7 +206,7 @@ const form = `
     </section>
   </fieldset>
 
-  <fieldset class="tab">
+  <fieldset class="tab" data-fieldset="resume">
     <h3 class="fs-5">Resume of the form</h3>
   </fieldset>
 
