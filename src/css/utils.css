@@ -47,19 +47,3 @@ fieldset {
   transition: all 0.3s linear;
   opacity: 0;
 }
-
-button {
-  z-index: 1;
-}
-
-/* [data-fieldset="profile"] {
-  color: red;
-}
-
-[data-fieldset="address"] {
-  color: blue;
-
-}
-[data-fieldset="shipping"] {
-  color: green;
-} */

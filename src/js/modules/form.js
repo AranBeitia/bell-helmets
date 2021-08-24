@@ -52,9 +52,9 @@ function nextPrev (n) {
     fieldset[countTab].classList.remove('--is-visible')
     countTab = countTab + n
 
-	if(countTab >= fieldset.length) {
+	if(countTab === fieldset.length) {
+    console.log('fin');
     registerForm.onsubmit = () => {
-      console.log('fin');
     }
 		return false
 	}

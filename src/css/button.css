@@ -14,3 +14,7 @@
   background-color: var(--bs-secondary);
   border-color: var(--bs-secondary);
 }
+
+button {
+  z-index: 1;
+}

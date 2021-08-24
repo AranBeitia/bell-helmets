@@ -6,13 +6,16 @@
   margin: 1rem;
   background-color: var(--bs-primary);
   opacity: 0.3;
+  transition: all 0.4s ease-in-out;
 }
 
 .step--is-active {
   opacity: 1;
+  transition: all 0.4s ease-in-out;
 }
 
 .step--is-finish {
   background-color: var(--bs-secondary);
   opacity: 1;
+  transition: all 0.4s ease-in-out;
 }
