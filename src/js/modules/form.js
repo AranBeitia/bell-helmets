@@ -3,7 +3,7 @@ import { buildLayout } from './functions.js'
 import { invalidLength, invalidType, invalidPassword, samePassword } from './alerts.js'
 
 let countTab = 0
-const fieldset = document.getElementsByClassName('tab')
+const fieldset = document.getElementsByTagName('fieldset')
 const registerForm = document.getElementById('registerForm')
 
 function goToForm(e) {
@@ -25,6 +25,11 @@ function showTab (n) {
   const nextBtn = document.getElementById('button-next')
 
   fieldset[n].classList.add('--is-visible')
+  fieldset[n+1].classList.add('--next')
+
+  if (fieldset[n].classList.contains('--is-visible')) {
+    fieldset[n].classList.remove('--next')
+  }
 
   if(n === 0 || n === fieldset.length - 1) {
     previousBtn.classList.add('--is-hidden')
