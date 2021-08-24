@@ -27,7 +27,7 @@ const product = `
 `
 
 const form = `
-<form action="" method="POST" id="registerForm" name="registerForm">
+<form action="#" method="" id="registerForm" name="registerForm">
   <fieldset class="tab" data-fieldset="profile">
     <h3 class="fs-5">Step 1 <span class="fs-6">profile</span></h3>
     <section class="row g-3">
@@ -40,7 +40,6 @@ const form = `
           name="name"
           min="5"
           max="20"
-          required
         />
       </div>
 
@@ -52,7 +51,6 @@ const form = `
           id="email"
           name="email"
           max="50"
-          required
         />
       </div>
 
@@ -91,7 +89,6 @@ const form = `
           id="firstName"
           name="firstName"
           max="20"
-          required
         />
       </div>
       <div class="col-md-6">
@@ -102,7 +99,6 @@ const form = `
           id="lastName"
           name="lastName"
           max="20"
-          required
         />
       </div>
       <div class="col-md-6">
@@ -112,7 +108,6 @@ const form = `
           class="form-control"
           id="birthday"
           name="birthday"
-          required
         />
       </div>
       <div class="col-md-6">
@@ -123,7 +118,6 @@ const form = `
           id="address"
           name="address"
           max="50"
-          required
         />
       </div>
       <div class="col-md-6">
@@ -144,7 +138,6 @@ const form = `
           id="postalCode"
           name="postalCode"
           max="5"
-          required
         />
       </div>
       <div class="col-md-6">
@@ -176,7 +169,6 @@ const form = `
           name="phone"
           max="9"
           pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-          required
         />
       </div>
       <div class="col-md-6 form-check">
