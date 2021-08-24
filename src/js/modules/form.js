@@ -3,19 +3,26 @@ import { buildLayout } from './functions.js'
 import { empty, invalidLength, invalidType, invalidPassword, samePassword } from './alerts.js'
 
 let countTab = 0
+const fieldset = document.getElementsByClassName('tab')
+const registerForm = document.getElementById('registerForm')
+
 function goToForm(e) {
-	e.preventDefault()
+  e.preventDefault()
 	buildLayout(form)
 	showTab(countTab)
-
-	document.getElementById('button-previous').addEventListener('click', previous)
-	document.getElementById('button-next').addEventListener('click', next)
+	document.getElementById('button-previous').addEventListener('click', (e) => {
+    e.preventDefault()
+    nextPrev(-1)
+  })
+	document.getElementById('button-next').addEventListener('click', (e) => {
+    e.preventDefault()
+    nextPrev(1)
+  })
 }
 
 function showTab (n) {
-	const previousBtn = document.getElementById('button-previous')
-	const nextBtn = document.getElementById('button-next')
-  const fieldset = document.getElementsByClassName('tab')
+  const previousBtn = document.getElementById('button-previous')
+  const nextBtn = document.getElementById('button-next')
 
   fieldset[n].classList.add('--is-visible')
 
@@ -35,26 +42,18 @@ function showTab (n) {
   stepIndicator (n)
 }
 
-function next() {
-	const fieldset = document.getElementsByClassName('tab')
-
-	if(!validate()) return false
-	fieldset[countTab].classList.remove('--is-visible')
-
-	countTab = countTab + 1
+function nextPrev (n) {
+	if(n === 1 && !validate()) return false
+    fieldset[countTab].classList.remove('--is-visible')
+    countTab = countTab + n
 
 	if(countTab >= fieldset.length) {
-		document.getElementById('registerForm').onsubmit = function () {
-
-
-		}
+    registerForm.onsubmit = () => {
+      console.log('fin');
+    }
 		return false
 	}
 	showTab(countTab)
-}
-
-function previous () {
-	console.log('go to previous');
 }
 
 function buildAlertMessage(input, html) {
@@ -63,10 +62,10 @@ function buildAlertMessage(input, html) {
 
 function validate() {
 	let tabs = document.querySelectorAll('[data-fieldset]')
-	let y = tabs[countTab].getElementsByTagName('input')
+	let input = tabs[countTab].getElementsByTagName('input')
 	let valid = true
 	tabs = Array.from(tabs); // convert HTMLCollection into Array
-	y = Array.from(y)
+	input = Array.from(input)
 
 	const minMaxRegex = /^.{5,20}$/
 	const max50Regex = /^.{1,50}$/
@@ -74,98 +73,102 @@ function validate() {
 	const max9Regex = /^.{1,9}$/
 	const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 	const pswRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,20}$/
+  const datesRegex = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/
 
-	for (let i = 0; i < y.length; i++) {
-		if(y[i].required && y[i].value === '') {
-			buildAlertMessage(y[i], empty)
-			y[i].focus()
-			return valid = false
-		} else if (y[i].value !== ''){
-			if(tabs[i].dataset.fieldset === 'profile') {
-				if(y[i].name === 'name') {
-					if(!minMaxRegex.test(y[i].value)) {
-						buildAlertMessage(y[i], invalidLength)
-						return valid = false
-					}
-				}
-			}
+	for (let i = 0; i < input.length; i++) {
+    if(input[i].name === 'name') {
+      if(!minMaxRegex.test(input[i].value)) {
+        input[i].focus()
+        buildAlertMessage(input[i], invalidLength)
+        valid = false
+      }
+    }
 
-			else if(tabs[i].dataset.fieldset === 'address') {
-				if(y[i].name === 'firstName') {
-					if (!max5Regex.test(y[i].value)) {
-						buildAlertMessage(y[i], invalidLength)
-						return valid = false
-					}
-				}
-			}
-		}
+    if(input[i].name === 'email') {
+      if(!emailRegex.test(input[i].value)) {
+        input[i].focus()
+        buildAlertMessage(input[i], invalidType)
+        valid = false
+      } else if (!max50Regex.test(input[i].value)) {
+        input[i].focus()
+        buildAlertMessage(input[i], invalidLength)
+        valid = false
+      }
+    }
 
+    if(input[i].name === 'password') {
+      if(!pswRegex.test(input[i].value)) {
+        input[i].focus()
+        buildAlertMessage(input[i], invalidPassword)
+        valid = false
+      }
+    }
 
-			// 	} else if(!minMaxRegex.test(inputName.value)) {
-	// 		buildAlertMessage(inputName, invalidLength)
-	// 		inputName.focus()
-	// 		return valid = false
-	// 	}
+    if(input[i].name === 'confirmPassword') {
+      const password = document.getElementById('password')
+      if(input[i].value !== password.value) {
+        input[i].focus()
+        buildAlertMessage(input[i], samePassword)
+        valid = false
+      }
+    }
+
+    if(input[i].name === 'firstName') {
+      if (!max50Regex.test(input[i].value)) {
+        input[i].focus()
+        buildAlertMessage(input[i], invalidLength)
+        valid = false
+      }
+    }
+
+    if(input[i].name === 'lastName') {
+      if (!max50Regex.test(input[i].value)) {
+        input[i].focus()
+        buildAlertMessage(input[i], invalidLength)
+        valid = false
+      }
+    }
+
+    if(input[i].name === 'birthday') {
+      if (!datesRegex.test(input[i].value)) {
+        input[i].focus()
+        buildAlertMessage(input[i], invalidType)
+        valid = false
+      }
+    }
+
+    if(input[i].name === 'address') {
+      if (!max50Regex.test(input[i].value)) {
+        input[i].focus()
+        buildAlertMessage(input[i], invalidLength)
+        valid = false
+      }
+    }
+
+    if(input[i].name === 'address2') {
+      if (!max50Regex.test(input[i].value)) {
+        input[i].focus()
+        buildAlertMessage(input[i], invalidLength)
+        valid = false
+      }
+    }
+
+    if(input[i].name === 'postalCode') {
+      if (!max5Regex.test(input[i].value)) {
+        input[i].focus()
+        buildAlertMessage(input[i], invalidLength)
+        valid = false
+      }
+    }
+
+    if(input[i].name === 'phone') {
+      if (!max9Regex.test(input[i].value)) {
+        input[i].focus()
+        buildAlertMessage(input[i], invalidLength)
+        valid = false
+      }
+    }
 	}
-
-	const inputName = document.forms['registerForm']['name']
-	const inputEmail = document.forms['registerForm']['email']
-	const inputPsw = document.forms['registerForm']['password']
-	const inputConfirmPsw = document.forms['registerForm']['confirmPassword']
-	const inputFirstName = document.forms['registerForm']['firstName']
-	const inputLastName = document.forms['registerForm']['inputLastName']
-	const inputBirthday = document.forms['registerForm']['inputBirthday']
-	const inputAddress = document.forms['registerForm']['address']
-	const inputPostalCode = document.forms['registerForm']['postalCode']
-	// const inputCountry = document.forms['registerForm']['country']
-	const inputPhone = document.forms['registerForm']['phone']
-
-
-	// if(tabs[0]) {
-	// 	if(inputName.value === '') {
-	// 		buildAlertMessage(inputName, empty)
-	// 		inputName.focus()
-	// 		return valid = false
-	// 	} else if(!minMaxRegex.test(inputName.value)) {
-	// 		buildAlertMessage(inputName, invalidLength)
-	// 		inputName.focus()
-	// 		return valid = false
-	// 	}
-
-	// 	if(inputEmail.value === '') {
-	// 		buildAlertMessage(inputEmail, empty)
-	// 		inputEmail.focus()
-	// 		return valid = false
-	// 	} else if(!max50Regex.test(inputEmail.value)) {
-	// 		buildAlertMessage(inputEmail, invalidLength)
-	// 		inputEmail.focus()
-	// 		return valid = false
-	// 	} else if (!emailRegex.test(inputEmail.value)) {
-	// 		buildAlertMessage(inputEmail, invalidType)
-	// 		inputEmail.focus()
-	// 		return valid = false
-	// 	}
-
-	// 	if(inputPsw.value === '') {
-	// 		buildAlertMessage(inputPsw, empty)
-	// 		inputPsw.focus()
-	// 		return valid = false
-	// 	} else if(!pswRegex.test(inputPsw.value)) {
-	// 		buildAlertMessage(inputPsw, invalidPassword)
-	// 		inputPsw.focus()
-	// 		return valid = false
-	// 	}
-
-	// 	if(inputConfirmPsw.value !== inputPsw.value) {
-	// 		buildAlertMessage(inputConfirmPsw, samePassword)
-	// 		inputConfirmPsw.focus()
-	// 		return valid = false
-	// 	}
-	// 	// if(valid) {
-	// 	// 	tabs[0].classList.replace('--is-visible', '--is-hidden')
-	// 	// }
-	// }
-
 
 	if(valid) {
 		document.querySelectorAll('.step')[countTab].classList.replace('step--is-active', 'step--is-finish')
@@ -173,13 +176,12 @@ function validate() {
 	return valid
 }
 
-function stepIndicator (currentStep) {
+function stepIndicator (n) {
   const steps = document.querySelectorAll('.step')
 
   for (let i = 0; i < steps.length; i++) {
-    steps[currentStep].classList.add('step--is-active')
+    steps[n].classList.add('step--is-active')
   }
 }
-
 
 export { goToForm }
