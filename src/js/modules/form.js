@@ -1,6 +1,6 @@
 import { form } from './templatesHtml.js'
 import { buildLayout } from './functions.js'
-import { empty, invalidLength, invalidType, invalidPassword, samePassword } from './alerts.js'
+import { invalidLength, invalidType, invalidPassword, samePassword } from './alerts.js'
 
 let countTab = 0
 const fieldset = document.getElementsByClassName('tab')
