@@ -183,15 +183,15 @@ const form = `
     <section class="row g-3">
       <div class="col-md-6">
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="shipment" id="freeShipment">
+          <input class="form-check-input" type="radio" name="shipment" id="freeShipment" value="Free shipment (72H) ( no extra cost )" >
           <label class="form-check-label" for="freeShipment">Free shipment (72H) ( no extra cost )</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="shipment" id="extraShipping" checked>
+          <input class="form-check-input" type="radio" name="shipment" id="extraShipping" value="Extra shipping (48h) ( +5 € )" checked>
           <label class="form-check-label" for="extraShipping">Extra shipping (48h) ( +5 € )</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="shipment" id="premium" checked>
+          <input class="form-check-input" type="radio" name="shipment" id="premium" value="Premium (24h) ( + 10€ )" >
           <label class="form-check-label" for="premium">Premium (24h) ( + 10€ )</label>
         </div>
       </div>

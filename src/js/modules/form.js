@@ -4,7 +4,6 @@ import { invalidLength, invalidType, invalidPassword, samePassword } from './ale
 
 let countTab = 0
 const fieldset = document.getElementsByTagName('fieldset')
-const registerForm = document.getElementById('registerForm')
 
 function goToForm(e) {
   e.preventDefault()
@@ -25,13 +24,16 @@ function showTab (n) {
   const nextBtn = document.getElementById('button-next')
 
   fieldset[n].classList.add('--is-visible')
-  fieldset[n+1].classList.add('--next')
+
+  if(n !== fieldset.length - 1) {
+    fieldset[n+1].classList.add('--next')
+  }
 
   if (fieldset[n].classList.contains('--is-visible')) {
     fieldset[n].classList.remove('--next')
   }
 
-  if(n === 0 || n === fieldset.length - 1) {
+  if(n === 0) {
     previousBtn.classList.add('--is-hidden')
   } else {
 		previousBtn.classList.remove('--is-hidden')
@@ -52,10 +54,18 @@ function nextPrev (n) {
     fieldset[countTab].classList.remove('--is-visible')
     countTab = countTab + n
 
-	if(countTab === fieldset.length) {
-    console.log('fin');
-    registerForm.onsubmit = () => {
-    }
+	if(countTab === fieldset.length - 1) {
+    fieldset[countTab].classList.add('--is-visible')
+    fieldset[countTab].classList.remove('--next')
+    document.getElementById('button-previous').classList.add('--is-hidden')
+    fieldset[countTab].innerHTML += `
+      <p>Terms and conditions: </p>
+      <p>Product details: </p>
+      <p>Shipping date details: ${document.forms['registerForm']['shipment'].value}</p>
+      <p>Final price: </p>
+      <p>Time to finish registration (since step 1): </p>
+    `
+
 		return false
 	}
 	showTab(countTab)
