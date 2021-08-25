@@ -58,6 +58,8 @@ function nextPrev (n) {
     fieldset[countTab].classList.add('--is-visible')
     fieldset[countTab].classList.remove('--next')
     document.getElementById('button-previous').classList.add('--is-hidden')
+    document.getElementById('button-next').classList.add('--is-hidden')
+    document.querySelectorAll('.step')[countTab].classList.add('step--is-active')
     fieldset[countTab].innerHTML += `
       <p>Terms and conditions: </p>
       <p>Product details: </p>
