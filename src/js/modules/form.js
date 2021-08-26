@@ -61,9 +61,9 @@ function nextPrev (n) {
     document.getElementById('button-next').classList.add('--is-hidden')
     document.querySelectorAll('.step')[countTab].classList.add('step--is-active')
     fieldset[countTab].innerHTML += `
-      <p>Product details: </p>
+      <p>Product details: Bell helmet white - 249.99 €</p>
       <p>Shipping date details: ${document.forms['registerForm']['shipment'].value}</p>
-      <p>Final price: </p>
+      <p>Final price: ${249.99 + Number(document.forms['registerForm']['shipment'].value)} €</p>
       <p>Time to finish registration (since step 1): </p>
     `
 		return false
