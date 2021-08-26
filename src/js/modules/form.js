@@ -66,7 +66,6 @@ function nextPrev (n) {
       <p>Final price: </p>
       <p>Time to finish registration (since step 1): </p>
     `
-
 		return false
 	}
 	showTab(countTab)
