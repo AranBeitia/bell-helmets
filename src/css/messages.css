@@ -1,3 +1,14 @@
 .warning {
   color: var(--bs-secondary);
 }
+
+.fadeout {
+  animation-name: fadeout;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeout {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}

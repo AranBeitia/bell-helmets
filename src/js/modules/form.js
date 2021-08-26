@@ -61,7 +61,6 @@ function nextPrev (n) {
     document.getElementById('button-next').classList.add('--is-hidden')
     document.querySelectorAll('.step')[countTab].classList.add('step--is-active')
     fieldset[countTab].innerHTML += `
-      <p>Terms and conditions: </p>
       <p>Product details: </p>
       <p>Shipping date details: ${document.forms['registerForm']['shipment'].value}</p>
       <p>Final price: </p>
@@ -74,7 +73,17 @@ function nextPrev (n) {
 }
 
 function buildAlertMessage(input, html) {
-	input.insertAdjacentHTML('afterend',html)
+  input.insertAdjacentHTML('afterend',html)
+  let message = document.getElementsByTagName('p')
+  message = Array.from(message)
+  message.forEach (item => {
+    setTimeout(() => {
+      item.classList.add('fadeout')
+      setTimeout(function () {
+        item.remove()
+      }, 1000)
+    }, 3000)
+  })
 }
 
 function validate() {
@@ -184,6 +193,10 @@ function validate() {
         buildAlertMessage(input[i], invalidLength)
         valid = false
       }
+    }
+
+    if(input[i].name === 'termsConditions') {
+      console.log('button disabled');
     }
 	}
 

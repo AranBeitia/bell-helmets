@@ -200,6 +200,10 @@ const form = `
 
   <fieldset data-fieldset="resume">
     <h3 class="fs-5">Resume of the form</h3>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="termsConditions" id="termsConditions" >
+      <label class="form-check-label" for="termsConditions"><a href="#">Terms and conditions</a></label>
+    </div>
   </fieldset>
 
   <div class="d-flex justify-content-end my-4">
