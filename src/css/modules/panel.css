@@ -20,19 +20,19 @@
 }
 
 .panel__bg01 {
-  background-image: url(../../assets/img/bell-bg001.jpg);
+  background-image: url(../../assets/img/bell-bg01.jpg);
 }
 .panel__bg02 {
-  background-image: url(../../assets/img/bell-bg008.jpg);
+  background-image: url(../../assets/img/bell-bg02.jpg);
 }
 .panel__bg03 {
-  background-image: url(../../assets/img/bell-bg011.jpg);
+  background-image: url(../../assets/img/bell-bg03.jpg);
 }
 .panel__bg04 {
-  background-image: url(../../assets/img/bell-bg004.jpg);
+  background-image: url(../../assets/img/bell-bg04.jpg);
 }
 .panel__bg05 {
-  background-image: url(../../assets/img/bell-bg002.jpg);
+  background-image: url(../../assets/img/bell-bg05.jpg);
 }
 
 .panel > * {
