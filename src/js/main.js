@@ -1,8 +1,10 @@
+import { panel } from './modules/panels.js'
 import { product } from './modules/templatesHtml.js'
 import { buildLayout } from './modules/functions.js'
 import { goToForm } from './modules/form.js'
 
 document.addEventListener('DOMContentLoaded', () => {
+	panel()
 	buildLayout(product)
 	init()
 })

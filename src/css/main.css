@@ -1,6 +1,7 @@
-@import 'tokens.css';
-@import 'logo.css';
-@import 'utils.css';
-@import 'button.css';
-@import 'step.css';
-@import 'messages.css';
+@import 'modules/tokens.css';
+@import 'modules/logo.css';
+@import 'modules/utils.css';
+@import 'modules/panel.css';
+@import 'modules/button.css';
+@import 'modules/step.css';
+@import 'modules/messages.css';
