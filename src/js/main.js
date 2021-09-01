@@ -5,11 +5,11 @@ import { goToForm } from './modules/form.js'
 
 document.addEventListener('DOMContentLoaded', () => {
 	panel()
-	buildLayout(product)
 	init()
 })
 
 function init () {
+	buildLayout(product)
 	document.getElementById('product')
 		.addEventListener('click', (e) => {
 			if(e.target.matches('.image-list img')) {
