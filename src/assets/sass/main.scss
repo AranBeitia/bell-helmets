@@ -1,0 +1,13 @@
+@import 'components/tokens.scss';
+@import 'components/logo.scss';
+@import 'components/utils.scss';
+@import 'components/panel.scss';
+@import 'components/button.scss';
+@import 'components/step.scss';
+@import 'components/messages.scss';
+
+.hero {
+  min-height: 400px;
+  background-image: url('../img/homebg.png');
+  background-size: cover;
+}
