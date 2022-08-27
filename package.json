@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Validation form project in a process of shopping product ## Badges",
   "scripts": {
-    "start": "parcel index.html",
+    "dev:serve": "json-server --watch data.json",
+    "start": "parcel index.html & npm run dev:serve",
     "build": "parcel build index.html --dist-dir ./dist"
   },
   "repository": {
